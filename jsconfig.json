@@ -1,9 +1,41 @@
 {
   "compilerOptions": {
+    "target": "es2018",
+    "lib": ["dom", "dom.iterable", "es6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "baseUrl": "app",
-    "module": "commonjs",
-    "target": "es2016",
-    "jsx": "react"
+    "paths": {
+      "components/*": ["components/*"],
+      "containers/*": ["containers/*"],
+      "providers/*": ["providers/*"],
+      "utils/*": ["utils/*"],
+      "helpers/*": ["helpers/*"],
+      "translations/*": ["translations/*"],
+      "types": ["types/index"],
+      "hooks": ["hooks/index"]
+    },
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true
   },
+  "include": [
+    "app"
+  ],
   "exclude": ["node_modules", "**/node_modules/*"]
 }
