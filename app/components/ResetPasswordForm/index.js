@@ -48,8 +48,10 @@ export default function ResetPasswordForm() {
       }
 
       onReset();
+      return Promise.resolve();
     } catch (error) {
       Error(error);
+      return Promise.resolve();
     }
   };
 

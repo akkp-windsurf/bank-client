@@ -4,7 +4,11 @@
  *
  */
 
-import { FORGOT_PASSWORD_REQUEST, FORGOT_PASSWORD_SUCCESS, FORGOT_PASSWORD_ERROR } from './constants';
+import {
+  FORGOT_PASSWORD_REQUEST,
+  FORGOT_PASSWORD_SUCCESS,
+  FORGOT_PASSWORD_ERROR,
+} from './constants';
 
 export function forgotPasswordAction() {
   return {

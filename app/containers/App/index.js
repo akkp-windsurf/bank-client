@@ -42,7 +42,6 @@ import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import saga from './saga';
 
-
 const stateSelector = createStructuredSelector({
   locale: makeSelectLocale(),
 });

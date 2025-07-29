@@ -11,7 +11,7 @@ import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import ForgotPasswordAction from '../index';
-import { DEFAULT_LOCALE } from '../../../locales';
+import { DEFAULT_LOCALE } from '../../../utils/locales';
 
 describe('<ForgotPasswordAction />', () => {
   it('Expect to not log errors in console', () => {

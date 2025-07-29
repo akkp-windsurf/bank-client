@@ -19,13 +19,14 @@ const selectForgetPasswordPageDomain = (state) =>
 const makeSelectForgetPasswordPage = () =>
   createSelector(selectForgetPasswordPageDomain, (substate) => substate);
 
-
 const makeSelectEmail = () =>
   createSelector(selectForgetPasswordPageDomain, (substate) => substate.email);
 
-  const makeSelectIsSuccess = () =>
-  createSelector(selectForgetPasswordPageDomain, (substate) => substate.isSuccess);
-
+const makeSelectIsSuccess = () =>
+  createSelector(
+    selectForgetPasswordPageDomain,
+    (substate) => substate.isSuccess,
+  );
 
 export default makeSelectForgetPasswordPage;
-export {  makeSelectEmail, makeSelectIsSuccess };
+export { makeSelectEmail, makeSelectIsSuccess };
