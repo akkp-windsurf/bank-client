@@ -40,7 +40,17 @@ export default function ConstantCookie() {
                 <FormattedMessage {...messages.decline} />
               </a>
             </Button>
-            <Button type="primary" onClick={() => setCookie('accept', true)}>
+            <Button
+              type="primary"
+              onClick={() =>
+                setCookie('accept', true, {
+                  secure: process.env.NODE_ENV === 'production',
+                  sameSite: 'strict',
+                  httpOnly: false,
+                  maxAge: 365 * 24 * 60 * 60,
+                })
+              }
+            >
               <FormattedMessage {...messages.accept} />
             </Button>
           </StyledConstantCookieActions>
