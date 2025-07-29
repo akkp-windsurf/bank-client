@@ -1,0 +1,37 @@
+# Development Dockerfile for React frontend with hot reload
+FROM node:18-alpine
+
+# Install security updates and image optimization dependencies
+RUN apk update && apk upgrade && \
+    apk add --no-cache dumb-init gifsicle optipng pngquant libjpeg-turbo-utils && \
+    rm -rf /var/cache/apk/*
+
+# Create app user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S reactjs -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package.json yarn.lock ./
+
+# Install all dependencies including dev dependencies
+RUN yarn install --frozen-lockfile && yarn cache clean
+
+# Copy source code
+COPY . .
+
+# Change ownership to app user
+RUN chown -R reactjs:nodejs /app
+USER reactjs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD wget --no-verbose --tries=1 --spider http://localhost:3000 || exit 1
+
+# Start development server with hot reload and legacy OpenSSL provider for Node.js 18 compatibility
+CMD ["dumb-init", "sh", "-c", "NODE_OPTIONS='--openssl-legacy-provider' yarn start"]
