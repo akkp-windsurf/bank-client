@@ -1,4 +1,7 @@
-const API_BASE_URL = 'http:///localhost:4000/bank';
+const API_BASE_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://api.pietrzakadrian.com/bank'
+    : 'https://localhost:4000/bank';
 const AUTH = 'Auth';
 const USERS = 'Users';
 const CURRENCIES = 'Currencies';
