@@ -1,12 +1,5 @@
-/**
- *
- * RegisterForm
- *
- */
-
 import React, { useEffect } from 'react';
 import { createStructuredSelector } from 'reselect';
-import { useSelector, useDispatch } from 'react-redux';
 import { makeSelectCurrentStep } from 'containers/PaymentPage/selectors';
 import { FormattedMessage } from 'react-intl';
 import PaymentStep from 'components/App/PaymentStep';
@@ -14,6 +7,7 @@ import { StyledFormWrapper, StyledForm } from 'components/Form/styles';
 import PaymentAction from 'components/App/PaymentAction';
 import { checkRecipientAction } from 'containers/PaymentPage/actions';
 import { nextStepAction } from 'containers/App/actions';
+import { useAppSelector, useAppDispatch } from 'hooks';
 import {
   Bill,
   Recipient,
@@ -23,23 +17,39 @@ import {
 } from 'components/App/PaymentContent';
 import messages from './messages';
 
-const stateSelector = createStructuredSelector({
+interface PaymentFormState {
+  currentStep: number;
+}
+
+interface PaymentStep {
+  id: number;
+  title: React.ReactNode;
+  content: React.ReactNode;
+}
+
+const stateSelector = createStructuredSelector<any, PaymentFormState>({
   currentStep: makeSelectCurrentStep(),
 });
 
-export default function PaymentForm() {
-  const { currentStep } = useSelector(stateSelector);
-  const dispatch = useDispatch();
+const PaymentForm: React.FC = () => {
+  const { currentStep } = useAppSelector(stateSelector);
+  const dispatch = useAppDispatch();
   const [form] = StyledForm.useForm();
 
-  const onNextStep = () => dispatch(nextStepAction());
-  const onCheckRecipient = () => dispatch(checkRecipientAction());
+  const onNextStep = (): void => {
+    dispatch(nextStepAction());
+  };
+  
+  const onCheckRecipient = (): void => {
+    dispatch(checkRecipientAction());
+  };
 
   useEffect(() => {
-    form.validateFields(['recipientBill']);
-  }, []);
+    form.validateFields(['recipientBill']).catch(() => {
+    });
+  }, [form]);
 
-  const onValidateFields = async () => {
+  const onValidateFields = async (): Promise<void> => {
     try {
       await form.validateFields();
 
@@ -51,11 +61,11 @@ export default function PaymentForm() {
         onNextStep();
       }
     } catch (err) {
-      Error(err);
+      console.error('Form validation error:', err);
     }
   };
 
-  const steps = [
+  const steps: PaymentStep[] = [
     {
       id: 1,
       title: <FormattedMessage {...messages.bill} />,
@@ -101,4 +111,6 @@ export default function PaymentForm() {
       </StyledFormWrapper>
     </>
   );
-}
+};
+
+export default PaymentForm;

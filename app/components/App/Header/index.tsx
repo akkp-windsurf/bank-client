@@ -1,19 +1,12 @@
-/**
- *
- * Header
- *
- */
-
 import React from 'react';
-
 import { createStructuredSelector } from 'reselect';
-import { useSelector, useDispatch } from 'react-redux';
 import { makeSelectIsCollapsedSidebar } from 'containers/App/selectors';
 import {
   collapsedSidebarAction,
   collapsedDrawerAction,
 } from 'containers/App/actions';
 import HeaderAction from 'components/App/HeaderAction';
+import { useAppSelector, useAppDispatch } from '../../../hooks';
 import {
   StyledMenuUnfoldOutlined,
   StyledMenuFoldOutlined,
@@ -24,15 +17,25 @@ import {
 import Mark from '../Mark';
 import HeaderName from '../HeaderName';
 
-const stateSelector = createStructuredSelector({
+interface HeaderState {
+  isCollapsedSidebar: boolean;
+}
+
+const stateSelector = createStructuredSelector<any, HeaderState>({
   isCollapsedSidebar: makeSelectIsCollapsedSidebar(),
 });
 
-export default function Header() {
-  const { isCollapsedSidebar } = useSelector(stateSelector);
-  const dispatch = useDispatch();
-  const onCollapsedSidebar = () => dispatch(collapsedSidebarAction());
-  const onCollapsedDrawer = () => dispatch(collapsedDrawerAction());
+const Header: React.FC = () => {
+  const { isCollapsedSidebar } = useAppSelector(stateSelector);
+  const dispatch = useAppDispatch();
+  
+  const onCollapsedSidebar = (): void => {
+    dispatch(collapsedSidebarAction());
+  };
+  
+  const onCollapsedDrawer = (): void => {
+    dispatch(collapsedDrawerAction());
+  };
 
   return (
     <StyledHeader open={isCollapsedSidebar}>
@@ -52,4 +55,6 @@ export default function Header() {
       <Mark />
     </StyledHeader>
   );
-}
+};
+
+export default Header;

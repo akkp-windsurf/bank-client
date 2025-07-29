@@ -1,12 +1,5 @@
-/**
- *
- * DashboardPage
- *
- */
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useDispatch, useSelector } from 'react-redux';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import { useInjectReducer, useInjectSaga } from 'redux-injectors';
 import Greeting from 'components/App/Greeting';
@@ -26,6 +19,8 @@ import Deposits from 'components/App/Deposits';
 import { makeSelectLayout, makeSelectUser } from 'containers/App/selectors';
 import { FormattedMessage } from 'react-intl';
 import { getAlertCount } from 'helpers';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { GridLayout, User } from '../../types';
 import saga from './saga';
 import reducer from './reducer';
 import { changeLayoutAction } from './actions';
@@ -34,25 +29,38 @@ import messages from './messages';
 
 const key = 'dashboardPage';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
-const stateSelector = createStructuredSelector({
+
+interface DashboardPageState {
+  layout: GridLayout;
+  isOpenedModal: boolean;
+  user: User | null;
+}
+
+const stateSelector = createStructuredSelector<any, DashboardPageState>({
   layout: makeSelectLayout(),
   isOpenedModal: makeSelectIsOpenedModal(),
   user: makeSelectUser(),
 });
 
-export default function DashboardPage() {
-  const { layout, isOpenedModal, user } = useSelector(stateSelector);
-  const dispatch = useDispatch();
+const DashboardPage: React.FC = () => {
+  const { layout, isOpenedModal, user } = useAppSelector(stateSelector);
+  const dispatch = useAppDispatch();
   const { ref } = useResizeObserver({ onResize });
   const isMobile = useMediaQuery({ maxWidth: 479 });
 
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
 
+  const handleLayoutChange = (_: unknown, layouts: GridLayout): void => {
+    dispatch(changeLayoutAction(layouts));
+  };
+
   return (
     <>
       <FormattedMessage {...messages.dashboard}>
-        {(title) => <Helmet title={`${getAlertCount(user)} ${title}`} />}
+        {(title: string) => (
+          <Helmet title={`${getAlertCount(user)} ${title}`} />
+        )}
       </FormattedMessage>
 
       <Greeting />
@@ -66,7 +74,7 @@ export default function DashboardPage() {
           isResizable={false}
           isDraggable={!isOpenedModal && !isMobile}
           layouts={layout}
-          onLayoutChange={(_, layouts) => dispatch(changeLayoutAction(layouts))}
+          onLayoutChange={handleLayoutChange}
         >
           <StyledGridItem
             key="1"
@@ -112,4 +120,6 @@ export default function DashboardPage() {
       </StyledGridWrapper>
     </>
   );
-}
+};
+
+export default DashboardPage;
