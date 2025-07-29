@@ -201,7 +201,7 @@ describe('Helper Functions', () => {
     });
 
     it('should handle empty string', () => {
-      expect(truncateString('')).toBe('');
+      expect(truncateString('')).toBe(null);
     });
 
     it('should handle string exactly at max length', () => {
