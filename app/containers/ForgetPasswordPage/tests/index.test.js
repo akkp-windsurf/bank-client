@@ -12,8 +12,8 @@ import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
 
 import ForgetPasswordPage from '../index';
-import { DEFAULT_LOCALE } from '../../../locales';
-import configureStore from '../../../configureStore';
+import { DEFAULT_LOCALE } from '../../../utils/locales';
+import configureStore from '../../../utils/configureStore';
 
 describe('<ForgetPasswordPage />', () => {
   let store;

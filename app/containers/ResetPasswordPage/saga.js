@@ -1,11 +1,14 @@
-import { call, put, select, takeLatest } from "redux-saga/effects";
-import { api, request } from "utils";
-import { resetPasswordErrorAction, resetPasswordSuccessAction } from "./actions";
-import { RESET_PASSWORD_REQUEST } from "./constants";
-import { makeSelectPassword, makeSelectToken } from "./selectors";
-import messages from "./messages";
-import { FormattedMessage } from "react-intl";
 import React from 'react';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
+import { FormattedMessage } from 'react-intl';
+import { api, request } from 'utils';
+import {
+  resetPasswordErrorAction,
+  resetPasswordSuccessAction,
+} from './actions';
+import { RESET_PASSWORD_REQUEST } from './constants';
+import { makeSelectPassword, makeSelectToken } from './selectors';
+import messages from './messages';
 
 export function* resetPassword() {
   const password = yield select(makeSelectPassword());
@@ -13,8 +16,12 @@ export function* resetPassword() {
   const requestURL = api.auth.resetPassword;
   const requestParameters = {
     method: 'PATCH',
-    headers: {       Authorization: `Bearer ${token}`, Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ password })
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ password }),
   };
 
   try {
