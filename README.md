@@ -1,3 +1,5 @@
+# Bank Client - Frontend Application
+
 <div align="center">
 <br>
     <a href="https://bank.pietrzakadrian.com"> 
@@ -13,12 +15,14 @@ Full Stack Web Application similar to financial software that is used in profess
 
 </div>
 
-- The current account balance is calculated based on the SQL operation (**Double-entry bookkeeping**)
-- Internalization of the application for three languages: **English**, **German** and **Polish**
-- Support for **multiple currencies** with the current rate supplied from an external server via **API**
-- Application programmed according to the correct design patterns and principle, i.e. **SOLID**, **DRY** and **KISS**
-- Software supports **PWA**, it is adapted to all modern browsers and mobile devices (RWD)
-- Implementation of **Google Analytics** along with the Cookie Consent according to the **GDPR**
+## 🏦 Banking Features
+
+- **Double-entry bookkeeping** - Account balance calculated based on SQL operations
+- **Multi-language support** - English, German, and Polish internationalization
+- **Multi-currency support** - Real-time exchange rates from external API
+- **Progressive Web App (PWA)** - Mobile-responsive design with offline capabilities
+- **GDPR Compliance** - Cookie consent and Google Analytics integration
+- **Security-first architecture** - JWT authentication and secure API communication
 
 <hr>
 
@@ -28,30 +32,209 @@ Full Stack Web Application similar to financial software that is used in profess
 
 <hr>
 
-<dl>
-  <h3>Frontend technologies stack</h3>
-  <dd>JavaScript, <a href="https://github.com/facebook/react">React.js</a>, <a href="https://github.com/reduxjs/react-redux">Redux</a>, <a href="https://github.com/redux-saga/redux-saga/">Redux-Saga</a>, <a href="https://github.com/reduxjs/reselect">Reselect</a>, <a href="https://github.com/immerjs/immer">immer</a>, <a href="https://github.com/ant-design/ant-design">Ant Design</a> and <a href="https://github.com/styled-components/styled-components">styled-components</a></dd>
-</dl>
+## 🛠 Technology Stack
 
-<hr>
+**Frontend Technologies:**
+- **React.js** - Component-based UI library
+- **Redux** - State management with Redux Toolkit
+- **Redux-Saga** - Side effect management for async operations
+- **Reselect** - Memoized state selectors
+- **Immer** - Immutable state updates
+- **Ant Design** - Enterprise-class UI components
+- **styled-components** - CSS-in-JS styling solution
+- **React Router** - Client-side routing
+- **React Intl** - Internationalization support
 
-<h4>System requirements</h4>
+**Development Tools:**
+- **Webpack** - Module bundler with custom configuration
+- **Babel** - JavaScript transpilation
+- **ESLint** - Code linting with Airbnb configuration
+- **Prettier** - Code formatting
+- **Jest** - Testing framework with 98% coverage requirement
+- **Husky** - Git hooks for pre-commit validation
 
-- [**Node.js** v12.18+](https://nodejs.org/en/)
-- [**yarn** v1.22+](https://classic.yarnpkg.com/en/)
+## 📋 Prerequisites
 
-<h4>Installation</h4>
+Before setting up the project, ensure you have the following installed:
+
+- **Node.js** v12.18+ (recommended: v16+)
+- **yarn** v1.22+ (package manager)
+- **Git** for version control
+- **Modern browser** (Chrome, Firefox, Safari, Edge)
+
+## 🚀 Quick Start
+
+### 1. Clone the Repository
 
 ```bash
-# 1. Install the required dependencies
-yarn
+git clone https://github.com/akkp-windsurf/bank-client.git
+cd bank-client
+```
 
-# 2. Change the endpoint api addresses to your local by editing a variable called API_BASE_URL
-nano app/utils/api.js
+### 2. Install Dependencies
 
-# 3. Start the server with the frontend app
+```bash
+yarn install
+```
+
+### 3. Environment Configuration
+
+Configure the API endpoint in `app/utils/api.js`:
+
+```javascript
+const API_BASE_URL = 'http://localhost:4000/bank'; // Update for your environment
+```
+
+For production deployment, update this to your production API URL.
+
+### 4. Start Development Server
+
+```bash
 yarn start
 ```
 
-<h4>License</h4>
-This project is licensed under the MIT license. Copyright (c) 2020 Adrian Pietrzak.
+The application will be available at `http://localhost:3000`
+
+## 🔧 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `yarn start` | Start development server |
+| `yarn build` | Build for production |
+| `yarn test` | Run test suite |
+| `yarn test:watch` | Run tests in watch mode |
+| `yarn test:coverage` | Generate coverage report |
+| `yarn lint` | Run ESLint |
+| `yarn lint:fix` | Fix ESLint issues |
+| `yarn prettify` | Format code with Prettier |
+| `yarn analyze` | Analyze bundle size |
+
+## 🏗 Project Structure
+
+```
+bank-client/
+├── app/                    # Application source code
+│   ├── components/         # Reusable UI components
+│   ├── containers/         # Connected components (pages)
+│   ├── helpers/           # Utility functions
+│   ├── providers/         # Context providers
+│   ├── translations/      # i18n translation files
+│   └── utils/            # API configuration and utilities
+├── internals/             # Build configuration
+│   ├── webpack/          # Webpack configurations
+│   ├── scripts/          # Build scripts
+│   └── generators/       # Code generators
+├── server/               # Development server
+└── build/               # Production build output
+```
+
+## 🔐 Security Considerations
+
+This banking application implements several security measures:
+
+- **JWT Token Authentication** - Secure API communication
+- **HTTPS Enforcement** - All production traffic encrypted
+- **Content Security Policy** - XSS protection
+- **Input Validation** - Client-side validation with server verification
+- **Secure Headers** - Security headers for production builds
+
+## 🌍 Environment Setup
+
+### Development Environment
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn start
+
+# Run tests
+yarn test
+```
+
+### Production Build
+
+```bash
+# Build for production
+yarn build
+
+# Serve production build
+yarn start:prod
+```
+
+### Environment Variables
+
+The application uses the following environment configurations:
+
+- `NODE_ENV` - Environment mode (development/production)
+- `PORT` - Server port (default: 3000)
+- `API_BASE_URL` - Backend API endpoint
+
+## 📊 Testing
+
+The project maintains a **98% test coverage requirement**. Tests are written using:
+
+- **Jest** - Testing framework
+- **React Testing Library** - Component testing utilities
+- **Jest Styled Components** - Styled components testing
+
+### Running Tests
+
+```bash
+# Run all tests
+yarn test
+
+# Run tests in watch mode
+yarn test:watch
+
+# Generate coverage report
+yarn test:coverage
+```
+
+### Coverage Requirements
+
+- **Statements**: 98%
+- **Branches**: 91%
+- **Functions**: 98%
+- **Lines**: 98%
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. Build the application:
+```bash
+yarn build
+```
+
+2. Deploy the `build/` directory to your web server
+
+3. Configure your web server to serve `index.html` for all routes (SPA routing)
+
+### Environment-Specific Configuration
+
+Update `app/utils/api.js` with the appropriate API endpoint for each environment:
+
+- **Development**: `http://localhost:4000/bank`
+- **Staging**: `https://staging-api.yourdomain.com/bank`
+- **Production**: `https://api.yourdomain.com/bank`
+
+## 📚 Additional Documentation
+
+- [Coding Standards](./CODING_STANDARDS.md) - Development guidelines and best practices
+- [Contributing Guide](./CONTRIBUTING.md) - How to contribute to the project
+- [Troubleshooting](./TROUBLESHOOTING.md) - Common issues and solutions
+- [Development Workflow](./DEVELOPMENT_WORKFLOW.md) - Git workflow and development process
+- [Environment Setup](./ENVIRONMENT_SETUP.md) - Detailed environment configuration
+- [Debugging Guide](./DEBUGGING.md) - Banking-specific debugging procedures
+- [Testing Guide](./TESTING.md) - Comprehensive testing documentation
+- [Onboarding](./ONBOARDING.md) - New developer onboarding guide
+
+## 🤝 Contributing
+
+Please read our [Contributing Guide](./CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## 📄 License
+
+This project is licensed under the MIT License. Copyright (c) 2020 Adrian Pietrzak.
