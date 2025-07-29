@@ -47,9 +47,9 @@ export default function ResetPasswordForm() {
         );
       }
 
-      onReset();
+      return onReset();
     } catch (error) {
-      Error(error);
+      return Error(error);
     }
   };
 

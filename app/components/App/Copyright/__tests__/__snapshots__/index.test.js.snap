@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Copyright /> should render a Copyright 1`] = `
 <div
-  class="Copyrightstyle__StyledCopyright-sc-1dw2rfe-0 kybcIo"
+  class="styles__StyledCopyright-sc-1wbnq6f-0 dDdCto"
 >
   Copyright © 
-  2020
+  2025
   . Made by
    
   <a

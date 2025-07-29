@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Currency /> should render a information 1`] = `
 <form
   class="ant-form ant-form-horizontal"
 >
   <div
-    class="ant-row ant-form-item Formstyle__StyledFormItem-sc-7x4ylh-6 hnNRbx"
+    class="ant-row ant-form-item styles__StyledFormItem-alwz5b-6 kphMDU"
   >
     <div
       class="ant-col ant-form-item-control"

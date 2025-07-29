@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Input, Checkbox } from 'antd';
-import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
-import { checkEmailAction, changeInputAction } from 'containers/App/actions';
+import { Input } from 'antd';
+import { intlShape, injectIntl } from 'react-intl';
+import { changeInputAction } from 'containers/App/actions';
 import { makeSelectEmail } from 'containers/ForgetPasswordPage/selectors';
 
 import { StyledFormItem } from 'components/Form/styles';
@@ -20,7 +20,6 @@ function EmailAddress({ intl, onValidateFields }) {
   const dispatch = useDispatch();
 
   const onChangeInput = (event) => dispatch(changeInputAction(event.target));
- 
 
   return (
     <>

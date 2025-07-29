@@ -4,8 +4,11 @@
  *
  */
 
-import { RESET_PASSWORD_REQUEST, RESET_PASSWORD_SUCCESS, RESET_PASSWORD_ERROR } from './constants';
-
+import {
+  RESET_PASSWORD_REQUEST,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_ERROR,
+} from './constants';
 
 export function resetPasswordAction() {
   return {

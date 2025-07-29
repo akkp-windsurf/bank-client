@@ -15,6 +15,7 @@ export default defineMessages({
   },
   description: {
     id: `${scope}.description`,
-    defaultMessage: 'Check your email. A link with the option to reset the password has been sent to the address provided.',
+    defaultMessage:
+      'Check your email. A link with the option to reset the password has been sent to the address provided.',
   },
 });

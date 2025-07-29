@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Mark /> should render a Mark 1`] = `
 <img
-  class="Markstyle__StyledMark-sc-1x4t4ce-0 icqNNZ"
+  class="styles__StyledMark-se5ebg-0 lhzoMu"
   height="auto"
   src="IMAGE_MOCK"
   width="40"

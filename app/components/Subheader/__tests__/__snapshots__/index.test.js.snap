@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Subheader /> should render a information 1`] = `
 <div
-  class="Subheaderstyle__StyledSubheader-sc-1dbp7w7-0 jVKMLr"
+  class="styles__StyledSubheader-sc-1gklioi-0 fYQDuZ"
 >
   <div
-    class="ant-page-header Subheaderstyle__StyledPageHeader-sc-1dbp7w7-1 gjCZxq ant-page-header-ghost"
+    class="ant-page-header styles__StyledPageHeader-sc-1gklioi-1 cQNHyA ant-page-header-ghost"
   >
     <div
       class="ant-page-header-heading"

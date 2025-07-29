@@ -1,12 +1,15 @@
-import { call, takeLatest, select, put } from "redux-saga/effects";
-import { api, request } from "utils";
-import { forgotPasswordErrorAction, forgotPasswordSuccessAction } from "./actions";
-import { FORGOT_PASSWORD_REQUEST } from "./constants";
-import { makeSelectEmail } from "./selectors";
+import { call, takeLatest, select, put } from 'redux-saga/effects';
+import { api, request } from 'utils';
 import React from 'react';
-import { FormattedMessage } from "react-intl";
-import messages from "containers/ForgetPasswordPage/messages";
-import { makeSelectLocale } from "providers/LanguageProvider/selectors";
+import { FormattedMessage } from 'react-intl';
+import messages from 'containers/ForgetPasswordPage/messages';
+import { makeSelectLocale } from 'providers/LanguageProvider/selectors';
+import { makeSelectEmail } from './selectors';
+import { FORGOT_PASSWORD_REQUEST } from './constants';
+import {
+  forgotPasswordErrorAction,
+  forgotPasswordSuccessAction,
+} from './actions';
 
 export function* forgotPassword() {
   const emailAddress = yield select(makeSelectEmail());
@@ -42,5 +45,4 @@ export function* forgotPassword() {
 
 export default function* forgetPasswordPageSaga() {
   yield takeLatest(FORGOT_PASSWORD_REQUEST, forgotPassword);
-
 }

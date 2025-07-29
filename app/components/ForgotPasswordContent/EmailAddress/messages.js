@@ -6,7 +6,8 @@
 
 import { defineMessages } from 'react-intl';
 
-export const scope = 'app.components.ForgetPassword.ForgetPasswordContent.EmailAddress';
+export const scope =
+  'app.components.ForgetPassword.ForgetPasswordContent.EmailAddress';
 
 export default defineMessages({
   label: {

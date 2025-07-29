@@ -33,15 +33,14 @@ import GlobalStyle from 'utils/styles';
 import { useInjectSaga } from 'redux-injectors';
 import PrivateRoute from 'components/Route/PrivateRoute';
 import PublicRoute from 'components/Route/PublicRoute';
-import enUS from 'antd/es/locale/en_US';
-import plPL from 'antd/es/locale/pl_PL';
-import deDE from 'antd/es/locale/de_DE';
+import enUS from 'antd/lib/locale/en_US';
+import plPL from 'antd/lib/locale/pl_PL';
+import deDE from 'antd/lib/locale/de_DE';
 import { makeSelectLocale } from 'providers/LanguageProvider/selectors';
 import { createStructuredSelector } from 'reselect';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import saga from './saga';
-
 
 const stateSelector = createStructuredSelector({
   locale: makeSelectLocale(),

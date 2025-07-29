@@ -1,17 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Greeting /> should render a Greeting 1`] = `
 <section
-  class="Greetingstyle__StyledGreeting-r6yczo-0 gpylKs"
+  class="styles__StyledGreeting-zog3as-0 cNGZbu"
 >
   <div>
     <span>
-      Good morning
+      Good evening
     </span>
     ,
      
     <span
-      class="Greetingstyle__StyledNameWrapper-r6yczo-1 ifLnoL"
+      class="styles__StyledNameWrapper-zog3as-1 esrRpR"
     >
        
     </span>

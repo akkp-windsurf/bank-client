@@ -1,17 +1,61 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
-import { DEFAULT_LOCALE } from 'utils/locales';
+import { renderWithProviders } from '../../../../../internals/testing/redux-utils';
 import BankCards from '../index';
-import 'utils/__tests__/__mocks__/matchMedia';
 
 describe('<BankCards />', () => {
   it('should render a BankCards', () => {
-    const { container } = render(
-      <IntlProvider locale={DEFAULT_LOCALE}>
-        <BankCards />
-      </IntlProvider>,
-    );
+    const initialState = {
+      global: {
+        user: {
+          cards: [
+            { id: 1, number: '1234567890123456', type: 'visa', balance: 1000 },
+          ],
+        },
+      },
+    };
+
+    const { container } = renderWithProviders(<BankCards />, { initialState });
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render with empty cards array', () => {
+    const initialState = {
+      global: {
+        user: { cards: [] },
+      },
+    };
+
+    const { container } = renderWithProviders(<BankCards />, { initialState });
+    expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('should render with multiple cards', () => {
+    const initialState = {
+      global: {
+        user: {
+          cards: [
+            { id: 1, number: '1234567890123456', type: 'visa', balance: 1000 },
+            {
+              id: 2,
+              number: '9876543210987654',
+              type: 'mastercard',
+              balance: 2000,
+            },
+          ],
+        },
+      },
+    };
+
+    const { container } = renderWithProviders(<BankCards />, { initialState });
+    expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('should handle missing user data', () => {
+    const initialState = {
+      global: { user: null },
+    };
+
+    const { container } = renderWithProviders(<BankCards />, { initialState });
+    expect(container.firstChild).toBeInTheDocument();
   });
 });

@@ -1,11 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<AmountMoney /> should render a AmountMoney 1`] = `
 <form
   class="ant-form ant-form-horizontal"
 >
   <div
-    class="ant-row ant-form-item Formstyle__StyledFormItem-sc-7x4ylh-6 hnNRbx"
+    class="ant-row ant-form-item styles__StyledFormItem-alwz5b-6 kphMDU"
   >
     <div
       class="ant-col ant-form-item-label"
@@ -28,7 +28,7 @@ exports[`<AmountMoney /> should render a AmountMoney 1`] = `
           class="ant-form-item-control-input-content"
         >
           <div
-            class="ant-input-number Formstyle__StyledInputNumber-sc-7x4ylh-5 eKKIVi"
+            class="ant-input-number styles__StyledInputNumber-alwz5b-5 dOhNIf"
           >
             <div
               class="ant-input-number-handler-wrap"
@@ -37,7 +37,7 @@ exports[`<AmountMoney /> should render a AmountMoney 1`] = `
                 aria-label="Increase Value"
                 class="ant-input-number-handler ant-input-number-handler-up"
                 role="button"
-                unselectable="unselectable"
+                unselectable="on"
               >
                 <span
                   aria-label="up"
@@ -64,7 +64,7 @@ exports[`<AmountMoney /> should render a AmountMoney 1`] = `
                 aria-label="Decrease Value"
                 class="ant-input-number-handler ant-input-number-handler-down"
                 role="button"
-                unselectable="unselectable"
+                unselectable="on"
               >
                 <span
                   aria-label="down"
