@@ -1,13 +1,13 @@
-import { defaultAction } from '../actions';
-import { DEFAULT_ACTION } from '../constants';
+import { forgotPasswordAction } from '../actions';
+import { FORGOT_PASSWORD_REQUEST } from '../constants';
 
 describe('ForgetPasswordPage actions', () => {
-  describe('Default Action', () => {
-    it('has a type of DEFAULT_ACTION', () => {
+  describe('Forgot Password Action', () => {
+    it('has a type of FORGOT_PASSWORD_REQUEST', () => {
       const expected = {
-        type: DEFAULT_ACTION,
+        type: FORGOT_PASSWORD_REQUEST,
       };
-      expect(defaultAction()).toEqual(expected);
+      expect(forgotPasswordAction()).toEqual(expected);
     });
   });
 });

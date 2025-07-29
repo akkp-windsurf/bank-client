@@ -19,18 +19,31 @@ const selectResetPasswordPageDomain = (state) =>
 const makeSelectResetPasswordPage = () =>
   createSelector(selectResetPasswordPageDomain, (substate) => substate);
 
-  const makeSelectPassword = () =>
-  createSelector(selectResetPasswordPageDomain, (substate) => substate.password);
+const makeSelectPassword = () =>
+  createSelector(
+    selectResetPasswordPageDomain,
+    (substate) => substate.password,
+  );
 
-  const makeSelectPassword2 = () =>
-  createSelector(selectResetPasswordPageDomain, (substate) => substate.password2);
+const makeSelectPassword2 = () =>
+  createSelector(
+    selectResetPasswordPageDomain,
+    (substate) => substate.password2,
+  );
 
-  const makeSelectIsSuccess = () =>
-  createSelector(selectResetPasswordPageDomain, (substate) => substate.isSuccess);
+const makeSelectIsSuccess = () =>
+  createSelector(
+    selectResetPasswordPageDomain,
+    (substate) => substate.isSuccess,
+  );
 
-  const makeSelectToken = () =>
+const makeSelectToken = () =>
   createSelector(selectResetPasswordPageDomain, (substate) => substate.token);
 
-
 export default makeSelectResetPasswordPage;
-export { makeSelectPassword, makeSelectPassword2, makeSelectIsSuccess, makeSelectToken };
+export {
+  makeSelectPassword,
+  makeSelectPassword2,
+  makeSelectIsSuccess,
+  makeSelectToken,
+};
