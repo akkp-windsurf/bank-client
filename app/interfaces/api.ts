@@ -15,13 +15,13 @@ export interface ApiEndpoints {
   transactions: {
     create: '/transactions';
     history: '/transactions/history';
-    details: (id: string) => `/transactions/${id}`;
+    details: (transactionId: string) => string;
   };
   bills: {
     list: '/bills';
     create: '/bills';
-    update: (id: string) => `/bills/${id}`;
-    delete: (id: string) => `/bills/${id}`;
+    update: (billId: string) => string;
+    delete: (billId: string) => string;
   };
   currencies: {
     list: '/currencies';

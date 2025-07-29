@@ -167,8 +167,6 @@ export interface GridLayoutItem {
   static?: boolean;
 }
 
-import React from 'react';
-
 export interface ComponentProps {
   className?: string;
   children?: React.ReactNode;

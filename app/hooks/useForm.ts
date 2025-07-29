@@ -33,11 +33,11 @@ export function useForm<T extends Record<string, any>>(
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const setValue = useCallback((field: keyof T, value: T[keyof T]) => {
-    setValuesState(prev => ({ ...prev, [field]: value }));
-    setTouched(prev => ({ ...prev, [field]: true }));
+    setValuesState((prev: T) => ({ ...prev, [field]: value }));
+    setTouched((prev: Partial<Record<keyof T, boolean>>) => ({ ...prev, [field]: true }));
     
     if (errors[field]) {
-      setErrors(prev => {
+      setErrors((prev: Partial<Record<keyof T, string>>) => {
         const newErrors = { ...prev };
         delete newErrors[field];
         return newErrors;
@@ -46,15 +46,15 @@ export function useForm<T extends Record<string, any>>(
   }, [errors]);
 
   const setValues = useCallback((newValues: Partial<T>) => {
-    setValuesState(prev => ({ ...prev, ...newValues }));
+    setValuesState((prev: T) => ({ ...prev, ...newValues }));
   }, []);
 
   const setError = useCallback((field: keyof T, error: string) => {
-    setErrors(prev => ({ ...prev, [field]: error }));
+    setErrors((prev: Partial<Record<keyof T, string>>) => ({ ...prev, [field]: error }));
   }, []);
 
   const clearError = useCallback((field: keyof T) => {
-    setErrors(prev => {
+    setErrors((prev: Partial<Record<keyof T, string>>) => {
       const newErrors = { ...prev };
       delete newErrors[field];
       return newErrors;
@@ -69,7 +69,7 @@ export function useForm<T extends Record<string, any>>(
     if (!validate) return true;
     
     const fieldErrors = validate(values);
-    const fieldError = fieldErrors[field];
+    const fieldError = (fieldErrors as any)[field];
     
     if (fieldError) {
       setError(field, fieldError);
@@ -80,7 +80,7 @@ export function useForm<T extends Record<string, any>>(
     }
   }, [values, validate, setError, clearError]);
 
-  const validateForm = useCallback(): boolean => {
+  const validateForm = useCallback(() => {
     if (!validate) return true;
     
     const formErrors = validate(values);

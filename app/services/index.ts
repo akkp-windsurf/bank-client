@@ -78,7 +78,7 @@ export class TransactionService {
   }
 
   async getTransactionHistory(params?: TransactionHistoryParams): Promise<PaginatedApiResponse<Transaction>> {
-    const response = await apiClient.get<Transaction[]>('/transactions/history', params);
+    const response = await apiClient.get<Transaction[]>('/transactions/history', params ? params as Record<string, unknown> : undefined);
     return response as PaginatedApiResponse<Transaction>;
   }
 
@@ -90,7 +90,7 @@ export class TransactionService {
 
 export class BillService {
   async getBills(params?: BillListParams): Promise<PaginatedApiResponse<Bill>> {
-    const response = await apiClient.get<Bill[]>('/bills', params);
+    const response = await apiClient.get<Bill[]>('/bills', params ? params as Record<string, unknown> : undefined);
     return response as PaginatedApiResponse<Bill>;
   }
 

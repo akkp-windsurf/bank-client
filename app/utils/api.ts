@@ -1,4 +1,4 @@
-import { ApiRequestConfig, ApiResponse, ApiError } from '../interfaces/api';
+import { ApiRequestConfig, ApiResponse } from '../interfaces/api';
 
 export class ApiClient {
   private baseURL: string;
@@ -28,7 +28,7 @@ export class ApiClient {
         method: config.method,
         headers,
         body: config.data ? JSON.stringify(config.data) : undefined,
-      });
+      } as RequestInit);
 
       const data = await response.json();
 
@@ -47,7 +47,7 @@ export class ApiClient {
 
   async get<T = unknown>(url: string, params?: Record<string, unknown>): Promise<ApiResponse<T>> {
     const searchParams = params ? new URLSearchParams(params as Record<string, string>) : '';
-    const fullUrl = searchParams ? `${url}?${searchParams}` : url;
+    const fullUrl = searchParams.toString() ? `${url}?${searchParams}` : url;
     
     return this.request<T>({
       method: 'GET',
