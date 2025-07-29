@@ -44,6 +44,14 @@
 </ifModule>
 
 <IfModule mod_headers.c>
+  # Security Headers
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "no-referrer"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self'; object-src 'none'; media-src 'self'; frame-src 'none';"
+  
   # Do not cache sw.js, required for offline-first updates.
   <FilesMatch "sw\.js$">
     Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
