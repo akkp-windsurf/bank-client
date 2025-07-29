@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<FirstName /> should render a SuccessfulResult 1`] = `
 <div
-  class="ant-result ant-result-success SuccessfulResultstyle__StyledResult-sc-68imx0-0 ccVeQh"
+  class="ant-result ant-result-success styles__StyledResult-sc-1mvd1yq-0 ktNAPO"
 >
   <div
     class="ant-result-icon"

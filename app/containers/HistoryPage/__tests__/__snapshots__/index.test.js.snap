@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<HistoryPage /> should render and match the snapshot 1`] = `
 <Context.Provider
   value={
-    Object {
-      "store": Object {
+    {
+      "store": {
         "createReducer": [Function],
         "dispatch": [Function],
         "getState": [Function],
-        "injectedReducers": Object {},
-        "injectedSagas": Object {},
+        "injectedReducers": {},
+        "injectedSagas": {},
         "replaceReducer": [Function],
         "runSaga": [Function],
         "subscribe": [Function],
@@ -17,17 +17,17 @@ exports[`<HistoryPage /> should render and match the snapshot 1`] = `
       },
       "subscription": Subscription {
         "handleChangeWrapper": [Function],
-        "listeners": Object {
+        "listeners": {
           "notify": [Function],
         },
         "onStateChange": [Function],
         "parentSub": undefined,
-        "store": Object {
+        "store": {
           "createReducer": [Function],
           "dispatch": [Function],
           "getState": [Function],
-          "injectedReducers": Object {},
-          "injectedSagas": Object {},
+          "injectedReducers": {},
+          "injectedSagas": {},
           "replaceReducer": [Function],
           "runSaga": [Function],
           "subscribe": [Function],

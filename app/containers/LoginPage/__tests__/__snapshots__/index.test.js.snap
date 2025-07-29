@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<LoginPage /> should render its loginPage 1`] = `
 <header
-  class="Headerstyle__StyledHeader-ae05xe-0 gxFPFE"
+  class="styles__StyledHeader-nz2mrl-0 jqWEmV"
 >
   <a
     href="/"
   >
     <img
       alt="Bank Application"
-      class="Headerstyle__StyledImg-ae05xe-1 ggLcVg"
+      class="styles__StyledImg-nz2mrl-1 korIvZ"
       height="100%"
       src="IMAGE_MOCK"
       width="180"
@@ -17,7 +17,7 @@ exports[`<LoginPage /> should render its loginPage 1`] = `
   </a>
   <img
     alt="Adrian Pietrzak"
-    class="Headerstyle__StyledImg-ae05xe-1 ggLcVg"
+    class="styles__StyledImg-nz2mrl-1 korIvZ"
     height="100%"
     src="IMAGE_MOCK"
     width="50"

@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Logo /> should match the snapshot 1`] = `
 <div
-  class="Logostyle__StyledLogo-w0vuv7-0 evhvaf"
+  class="styles__StyledLogo-sc-1x0hc76-0 jHduag"
 >
   <img
     alt="Bank Application"

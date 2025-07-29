@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Footer /> should render a div 1`] = `
 <footer
-  class="Footerstyle__StyledFooter-sc-3vvbi3-0 efEtfj"
+  class="styles__StyledFooter-rds06k-0 eXlxgn"
 >
   <div
-    class="Footerstyle__StyledWarning-sc-3vvbi3-1 btJlec"
+    class="styles__StyledWarning-rds06k-1 bjLukI"
   >
     <span
       aria-label="info-circle"
-      class="anticon anticon-info-circle Footerstyle__StyledInfoCircleOutlined-sc-3vvbi3-2 iXYsXs"
+      class="anticon anticon-info-circle styles__StyledInfoCircleOutlined-rds06k-2 gBrlEg"
       role="img"
     >
       <svg
@@ -52,7 +52,7 @@ exports[`<Footer /> should render a div 1`] = `
     </ul>
   </div>
   <div
-    class="Footerstyle__StyledTip-sc-3vvbi3-3 feybDB"
+    class="styles__StyledTip-rds06k-3 iOyKUV"
   >
     <span>
       Remember: The bank does not require confirmation of any data, correct login or reading of the Banks messages by means of SMS, TAN and / or e-mail, or installation of any applications on the users phones or computers.
@@ -64,7 +64,7 @@ exports[`<Footer /> should render a div 1`] = `
     </span>
      
     <button
-      class="ant-btn Footerstyle__StyledButton-sc-3vvbi3-4 byxUJI ant-btn-link"
+      class="ant-btn styles__StyledButton-rds06k-4 bPGccU ant-btn-link"
       type="button"
     >
       <span>

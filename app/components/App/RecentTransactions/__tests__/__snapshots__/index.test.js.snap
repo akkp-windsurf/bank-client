@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<RecentTransactions /> should render a RecentTransactions 1`] = `
 <div
-  class="ant-card Cardstyle__StyledCard-s807iu-0 kIxAuJ ant-card-bordered"
+  class="ant-card styles__StyledCard-sc-1tq6noh-0 eyGmKc ant-card-bordered"
   loaded="1"
 >
   <div
@@ -22,11 +22,11 @@ exports[`<RecentTransactions /> should render a RecentTransactions 1`] = `
     class="ant-card-body"
   >
     <div
-      class="ant-spin ant-spin-spinning LoadingIndicatorstyle__StyledSpin-sc-1hamj2j-0 cVaifN"
+      class="ant-spin ant-spin-spinning styles__StyledSpin-sc-2p38ik-0 cPKCxh"
     >
       <span
         aria-label="loading"
-        class="anticon anticon-loading LoadingIndicatorstyle__StyledLoadingOutlined-sc-1hamj2j-1 bgzkcd ant-spin-dot"
+        class="anticon anticon-loading styles__StyledLoadingOutlined-sc-2p38ik-1 izblzp ant-spin-dot"
         role="img"
       >
         <svg

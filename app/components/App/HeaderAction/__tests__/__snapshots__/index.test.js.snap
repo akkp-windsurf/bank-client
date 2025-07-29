@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<HeaderAction /> should render a HeaderAction 1`] = `
 <div
-  class="HeaderActionstyle__StyledHeaderAction-sc-1v0240u-0 feaNdT"
+  class="styles__StyledHeaderAction-sc-1bzeocj-0 eRJtj"
 >
   <div
-    class="HeaderActionstyle__StyledHeaderWrapper-sc-1v0240u-8 hQPoLy"
+    class="styles__StyledHeaderWrapper-sc-1bzeocj-8 kbqDqG"
   >
     <button
-      class="ant-btn HeaderActionstyle__StyledHeaderActionItem-sc-1v0240u-1 cmPPXO ant-dropdown-trigger ant-btn-link"
+      class="ant-btn styles__StyledHeaderActionItem-sc-1bzeocj-1 dLmVOW ant-dropdown-trigger ant-btn-link"
       type="button"
     >
       <span
@@ -16,7 +16,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
       >
         <span
           aria-label="message"
-          class="anticon anticon-message HeaderActionstyle__StyledMessageOutlined-sc-1v0240u-4 iIaPJm"
+          class="anticon anticon-message styles__StyledMessageOutlined-sc-1bzeocj-4 efjGwC"
           role="img"
         >
           <svg
@@ -36,7 +36,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
         </span>
       </span>
       <div
-        class="HeaderActionstyle__StyledHeaderActionItemName-sc-1v0240u-2 hgmiCZ"
+        class="styles__StyledHeaderActionItemName-sc-1bzeocj-2 hLRHpZ"
       >
         <span>
           Messages
@@ -44,7 +44,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
       </div>
     </button>
     <button
-      class="ant-btn HeaderActionstyle__StyledHeaderActionItem-sc-1v0240u-1 cmPPXO ant-dropdown-trigger ant-btn-link"
+      class="ant-btn styles__StyledHeaderActionItem-sc-1bzeocj-1 dLmVOW ant-dropdown-trigger ant-btn-link"
       type="button"
     >
       <span
@@ -52,7 +52,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
       >
         <span
           aria-label="bell"
-          class="anticon anticon-bell HeaderActionstyle__StyledBellOutlined-sc-1v0240u-6 fDtdaM"
+          class="anticon anticon-bell styles__StyledBellOutlined-sc-1bzeocj-6 jEnVHw"
           role="img"
         >
           <svg
@@ -72,7 +72,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
         </span>
       </span>
       <div
-        class="HeaderActionstyle__StyledHeaderActionItemName-sc-1v0240u-2 hgmiCZ"
+        class="styles__StyledHeaderActionItemName-sc-1bzeocj-2 hLRHpZ"
       >
         <span>
           Notifications
@@ -80,12 +80,12 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
       </div>
     </button>
     <button
-      class="ant-btn HeaderActionstyle__StyledHeaderActionItem-sc-1v0240u-1 cmPPXO ant-btn-link"
+      class="ant-btn styles__StyledHeaderActionItem-sc-1bzeocj-1 dLmVOW ant-btn-link"
       type="button"
     >
       <span
         aria-label="poweroff"
-        class="anticon anticon-poweroff HeaderActionstyle__StyledPoweroffOutlined-sc-1v0240u-3 dauYlO"
+        class="anticon anticon-poweroff styles__StyledPoweroffOutlined-sc-1bzeocj-3 eFVtbe"
         role="img"
       >
         <svg
@@ -104,7 +104,7 @@ exports[`<HeaderAction /> should render a HeaderAction 1`] = `
         </svg>
       </span>
       <div
-        class="HeaderActionstyle__StyledHeaderActionItemName-sc-1v0240u-2 hgmiCZ"
+        class="styles__StyledHeaderActionItemName-sc-1bzeocj-2 hLRHpZ"
       >
         <span>
           Logout

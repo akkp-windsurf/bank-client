@@ -68,5 +68,16 @@ describe('request', () => {
 
       window.fetch.mockReturnValue(Promise.resolve(res));
     });
+
+    it('should throw an error on 404 response', (done) => {
+      request('/thisurlisincorrect')
+        .then(() => {
+          done(new Error('Expected request to throw an error'));
+        })
+        .catch((error) => {
+          expect(error.message).toContain('Not Found');
+          done();
+        });
+    });
   });
 });

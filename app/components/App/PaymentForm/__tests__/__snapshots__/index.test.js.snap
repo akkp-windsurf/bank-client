@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<PaymentForm /> should render a PaymentForm 1`] = `
 <div
-  class="ant-steps ant-steps-horizontal Stepsstyle__StyledSteps-cszd7q-0 gvgAqU ant-steps-label-horizontal"
+  class="ant-steps ant-steps-horizontal styles__StyledSteps-sc-1yd6lrj-0 cVyHft ant-steps-label-horizontal"
 >
   <div
     class="ant-steps-item ant-steps-item-process ant-steps-item-active"

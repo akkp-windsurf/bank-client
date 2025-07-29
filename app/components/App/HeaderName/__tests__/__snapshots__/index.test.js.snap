@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<AvailableFunds /> should render a AvailableFunds 1`] = `
 <span
-  class="HeaderNamestyle__StyledHeaderName-sc-106aplm-0 dgwlDT"
+  class="styles__StyledHeaderName-pxruxa-0 haweEo"
 >
   <div>
     Home

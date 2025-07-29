@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Deposits /> should render a Deposits 1`] = `
 <div
-  class="ant-card Cardstyle__StyledCard-s807iu-0 egrUQF ant-card-bordered"
+  class="ant-card styles__StyledCard-sc-1tq6noh-0 iKqrYo ant-card-bordered"
   darker="true"
   excluded="true"
   shadowed="true"
@@ -22,11 +22,11 @@ exports[`<Deposits /> should render a Deposits 1`] = `
         class="ant-card-extra"
       >
         <button
-          class="ant-btn Buttonstyle__StyledButton-nh59mr-0 bcqyjQ ant-btn-link"
+          class="ant-btn styles__StyledButton-sc-1v6up7w-0 dbPSWh ant-btn-link"
           type="button"
         >
           <div
-            class="Buttonstyle__StyledButtonContent-nh59mr-1 cBxojI"
+            class="styles__StyledButtonContent-sc-1v6up7w-1 hBxiOV"
           >
             <span
               aria-label="bank"
@@ -61,7 +61,7 @@ exports[`<Deposits /> should render a Deposits 1`] = `
     class="ant-card-body"
   >
     <div
-      class="Cardstyle__StyledCardContent-s807iu-1 fnMJaW"
+      class="styles__StyledCardContent-sc-1tq6noh-1 bOAQsz"
     >
       <span>
         The deposits function is disabled.
