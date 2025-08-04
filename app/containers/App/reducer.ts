@@ -24,15 +24,27 @@ import {
   READ_ALL_MESSAGES_SUCCESS,
   TOGGLE_CONFIRM_MODAL,
 } from './constants';
+import { AppState } from '../../types/RootState';
 
-export const initialState = {
+export interface AppAction {
+  type: string;
+  token?: any;
+  user?: any;
+  userData?: any;
+  layout?: any;
+  data?: any;
+  uuid?: string;
+  error?: any;
+}
+
+export const initialState: AppState = {
   isCollapsedSidebar: false,
   isCollapsedDrawer: false,
   isLogged: false,
   token: {},
   user: {},
   currencies: [],
-  messages: [],
+  messages: { data: [] },
   notifications: [],
   isOpenedMessage: false,
   isOpenedModal: false,
@@ -40,7 +52,7 @@ export const initialState = {
 };
 
 /* eslint-disable default-case, no-param-reassign, consistent-return */
-const appReducer = produce((draft, action) => {
+const appReducer = produce((draft: AppState, action: AppAction) => {
   if (/(.*)_ERROR/.test(action.type)) {
     return initialState;
   }
@@ -76,30 +88,37 @@ const appReducer = produce((draft, action) => {
     case GET_NOTIFICATIONS_SUCCESS:
       draft.notifications = action.data;
 
-      if (draft.user.userConfig.notificationCount) {
+      if (draft.user.userConfig && draft.user.userConfig.notificationCount) {
         draft.user.userConfig.notificationCount = 0;
       }
       break;
     case OPEN_MESSAGE_MODAL:
       draft.isOpenedMessage = true;
-      draft.openedMessage = action.uuid;
+      draft.openedMessage = action.uuid || '';
       break;
     case READ_MESSAGE_SUCCESS:
-      draft.messages.data.find(
-        ({ uuid }) => uuid === draft.openedMessage,
-      ).readed = true;
+      if (draft.messages.data) {
+        const message = draft.messages.data.find(
+          ({ uuid }) => uuid === draft.openedMessage,
+        );
+        if (message) {
+          message.readed = true;
+        }
+      }
 
-      if (draft.user.userConfig.messageCount) {
+      if (draft.user.userConfig && draft.user.userConfig.messageCount) {
         draft.user.userConfig.messageCount -= 1;
       }
       break;
     case READ_ALL_MESSAGES_SUCCESS:
-      draft.messages.data = draft.messages.data.map((message) => ({
-        ...message,
-        readed: true,
-      }));
+      if (draft.messages.data) {
+        draft.messages.data = draft.messages.data.map((message) => ({
+          ...message,
+          readed: true,
+        }));
+      }
 
-      if (draft.user.userConfig.messageCount) {
+      if (draft.user.userConfig && draft.user.userConfig.messageCount) {
         draft.user.userConfig.messageCount = 0;
       }
       break;
